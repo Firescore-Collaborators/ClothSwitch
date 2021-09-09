@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ClothSwitch : MonoBehaviour
 {
+    public GameObject clothSelected;
     public GameObject pareo;
-
+    public GameObject hat;
     RaycastHit hit;
+
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -16,15 +18,20 @@ public class ClothSwitch : MonoBehaviour
             {
                 if (hit.transform.name == "Pareo")
                 {
-                    hit.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(5f, 5f, 5f));
+                    clothSelected = hit.transform.gameObject;
                 }
+
+                if (hit.transform.name == "Hat")
+                {
+                    clothSelected = hit.transform.gameObject; 
+                }
+                clothSelected.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(4f, 4f, 4f));
             }
-           
         }
 
         if(Input.GetMouseButtonUp(0))
         {
-            hit.transform.gameObject.SetActive(false);
+            clothSelected.SetActive(false);
             pareo.SetActive(true);
         }
     }
