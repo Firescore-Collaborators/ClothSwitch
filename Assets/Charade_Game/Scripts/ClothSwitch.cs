@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ClothSwitch : MonoBehaviour
 {
@@ -32,6 +30,11 @@ public class ClothSwitch : MonoBehaviour
     public GameObject pBra;
     public GameObject pFishnet;
 
+    public Animator MaleAnim;
+    public Animator FeMaleAnim;
+
+    public ParticleSystem[] confetti;
+
     bool done = false;
     RaycastHit hit;
     string cloth = "";
@@ -45,7 +48,7 @@ public class ClothSwitch : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, 100))
             {
-                if(!done)
+                if (!done)
                 {
                     print(hit.transform.name);
                     if (hit.transform.name == "Pareo")
@@ -89,7 +92,6 @@ public class ClothSwitch : MonoBehaviour
 
                     if (hit.transform.name == "FShirt")
                     {
-                        LeanTween.rotateLocal(Female, new Vector3(0f, -210f, 0f), 0.2f);
                         done = true;
                         cloth = "FShirt";
                         Fshirt.SetActive(false);
@@ -126,37 +128,44 @@ public class ClothSwitch : MonoBehaviour
 
         }
 
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
+            print(count);
             done = false;
             clothSelected.gameObject.SetActive(false);
-            if(cloth == "Pareo")
+            if (cloth == "Pareo")
             {
                 Fpareo.SetActive(true);
                 count++;
+                FeMaleAnim.SetTrigger("action");
             }
 
-            if(cloth == "Hat")
+            if (cloth == "Hat")
             {
                 Fhat.SetActive(true);
                 count++;
+               
+                FeMaleAnim.SetTrigger("action");
             }
             if (cloth == "Bra" && count == 0)
             {
                 MBra.SetActive(true);
                 count++;
+                MaleAnim.SetTrigger("action");
             }
 
             if (cloth == "Shirt")
             {
                 Mshirt.SetActive(true);
                 count++;
+                MaleAnim.SetTrigger("action");
             }
 
             if (cloth == "Fishnet")
             {
                 Fishnet.SetActive(true);
                 count++;
+                FeMaleAnim.SetTrigger("action");
             }
 
             if (cloth == "FShirt")
@@ -169,21 +178,33 @@ public class ClothSwitch : MonoBehaviour
             {
                 Mshots.SetActive(true);
                 count++;
+                MaleAnim.SetTrigger("action");
             }
 
             if (cloth == "MFishnet")
             {
                 FFishnet.SetActive(true);
                 count++;
+                FeMaleAnim.SetTrigger("action");
             }
 
             if (cloth == "MBra")
             {
                 FBra.SetActive(true);
                 MFishnet.GetComponent<BoxCollider>().enabled = true;
-                LeanTween.rotateLocal(Female, new Vector3(0f, -23f, 0f), 0.2f);
                 count++;
             }
+        }
+    }
+
+
+    public void Confetti()
+    {
+        foreach (ParticleSystem p in confetti)
+        {
+            FeMaleAnim.SetTrigger("dance");
+            MaleAnim.SetTrigger("dance");
+            p.Play();
         }
     }
 }
