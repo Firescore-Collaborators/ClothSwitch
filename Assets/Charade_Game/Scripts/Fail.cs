@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Fail : MonoBehaviour
 {
@@ -29,6 +31,8 @@ public class Fail : MonoBehaviour
     public GameObject Pshots;
     public GameObject pBra;
     public GameObject pFishnet;
+
+    public GameObject FailPanel;
 
     public Animator MaleAnim;
     public Animator FeMaleAnim;
@@ -144,7 +148,7 @@ public class Fail : MonoBehaviour
             {
                 Fhat.SetActive(true);
                 count++;
-               
+                StartCoroutine(FailPanelShow());
                 FeMaleAnim.SetTrigger("action");
             }
             if (cloth == "Bra")
@@ -206,5 +210,12 @@ public class Fail : MonoBehaviour
             MaleAnim.SetTrigger("dance");
             p.Play();
         }
+    }
+
+    IEnumerator FailPanelShow()
+    {
+        yield return new WaitForSeconds(1f);
+        FailPanel.SetActive(true);
+        Confetti();
     }
 }
