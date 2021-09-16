@@ -145,8 +145,8 @@ public class ClothSwitch : MonoBehaviour
             {
                 Fhat.SetActive(true);
                 count++;
-               
-                FeMaleAnim.SetTrigger("action");
+                confetti[0].Play();
+                FeMaleAnim.SetTrigger("dance");
             }
             if (cloth == "Bra" && count == 0)
             {
@@ -159,7 +159,8 @@ public class ClothSwitch : MonoBehaviour
             {
                 Mshirt.SetActive(true);
                 count++;
-                MaleAnim.SetTrigger("action");
+                confetti[1].Play();
+                MaleAnim.SetTrigger("dance");
             }
 
             if (cloth == "Fishnet")
@@ -195,17 +196,6 @@ public class ClothSwitch : MonoBehaviour
                 MFishnet.GetComponent<BoxCollider>().enabled = true;
                 count++;
             }
-        }
-    }
-
-
-    public void Confetti()
-    {
-        foreach (ParticleSystem p in confetti)
-        {
-            FeMaleAnim.SetTrigger("dance");
-            MaleAnim.SetTrigger("dance");
-            p.Play();
         }
     }
 }

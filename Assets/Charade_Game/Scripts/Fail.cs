@@ -206,8 +206,6 @@ public class Fail : MonoBehaviour
     {
         foreach (ParticleSystem p in confetti)
         {
-            FeMaleAnim.SetTrigger("dance");
-            MaleAnim.SetTrigger("dance");
             p.Play();
         }
     }
@@ -217,5 +215,7 @@ public class Fail : MonoBehaviour
         yield return new WaitForSeconds(1f);
         FailPanel.SetActive(true);
         Confetti();
+        FeMaleAnim.SetTrigger("dissapoint");
+        MaleAnim.SetTrigger("dissapoint");
     }
 }
