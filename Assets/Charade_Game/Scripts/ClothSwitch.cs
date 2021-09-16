@@ -31,6 +31,9 @@ public class ClothSwitch : MonoBehaviour
     public GameObject pBra;
     public GameObject pFishnet;
 
+
+    public GameObject NiceJobText;
+
     public Animator MaleAnim;
     public Animator FeMaleAnim;
 
@@ -147,6 +150,7 @@ public class ClothSwitch : MonoBehaviour
                 count++;
                 confetti[0].Play();
                 FeMaleAnim.SetTrigger("dance");
+                NiceJobText.SetActive(true);
             }
             if (cloth == "Bra" && count == 0)
             {
