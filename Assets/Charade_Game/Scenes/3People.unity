@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 0.8574213, b: 0.7019608, a: 1}
-  m_AmbientEquatorColor: {r: 0.6886792, g: 0.68065846, b: 0.65944284, a: 1}
-  m_AmbientGroundColor: {r: 0.3301887, g: 0.32231906, b: 0.29748133, a: 1}
+  m_AmbientSkyColor: {r: 0.55998576, g: 0.8036714, b: 0.9811321, a: 1}
+  m_AmbientEquatorColor: {r: 1, g: 0.7028302, b: 0.90822697, a: 1}
+  m_AmbientGroundColor: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -5226,42 +5226,42 @@ PrefabInstance:
     - target: {fileID: 200033098810889420, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5293329
+      value: 0.5659369
       objectReference: {fileID: 0}
     - target: {fileID: 200033098810889420, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.8358761
+      value: 0.7538942
       objectReference: {fileID: 0}
     - target: {fileID: 200033098810889420, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.14090176
+      value: -0.10991886
       objectReference: {fileID: 0}
     - target: {fileID: 200033098810889420, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.035559822
+      value: 0.31508243
       objectReference: {fileID: 0}
     - target: {fileID: 200033098810889420, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 63.5
+      value: 67.306
       objectReference: {fileID: 0}
     - target: {fileID: 200033098810889420, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 168.4
+      value: 114.645004
       objectReference: {fileID: 0}
     - target: {fileID: 200033098810889421, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.8066038
       objectReference: {fileID: 0}
     - target: {fileID: 200033098810889421, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.9281896
       objectReference: {fileID: 0}
     - target: {fileID: 200033098810889421, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
@@ -5271,7 +5271,7 @@ PrefabInstance:
     - target: {fileID: 200033098810889421, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
       propertyPath: m_Intensity
-      value: 1.6
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 200033098810889421, guid: afab046075c9ef149a91c7f58ffcc0ac,
         type: 3}
