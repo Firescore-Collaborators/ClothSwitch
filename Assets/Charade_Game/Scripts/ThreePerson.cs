@@ -15,6 +15,9 @@ public class ThreePerson : MonoBehaviour
     public GameObject BSkirt;
     public GameObject BGirlShoe;
     public GameObject BGirlSuit;
+    public GameObject BUnderWear;
+    
+
 
     public GameObject WCapPant;
     public GameObject WCapSuit;
@@ -26,6 +29,8 @@ public class ThreePerson : MonoBehaviour
     public GameObject WSkirt;
     public GameObject WGirlShoe;
     public GameObject WGirlSuit;
+    public GameObject Bra;
+    public GameObject WUnderWear;
 
 
     public GameObject MCapPant;
@@ -52,6 +57,8 @@ public class ThreePerson : MonoBehaviour
     public GameObject GirlSuit;
 
 
+    public ParticleSystem[] confetti;
+    public Animator[] AnimatorArray;
 
     GameObject clothSelected;
     bool done = false;
@@ -72,25 +79,151 @@ public class ThreePerson : MonoBehaviour
                     print(hit.transform.name);
                     if (hit.transform.name == "MSweater")
                     {
-
                         done = true;
                         cloth = hit.transform.name;
                         MSweater.SetActive(false);
-                        clothSelected = Instantiate(Sweater, hit.transform.position, hit.transform.rotation);
                        
+                        clothSelected = Instantiate(Sweater, hit.transform.position, hit.transform.rotation);  
+                    }
+
+                    if (hit.transform.name == "WHarryShoes")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                        WHarryShoes.SetActive(false);
+                        clothSelected = Instantiate(HarryShoes, hit.transform.position, hit.transform.rotation);
+                    }
+
+                    if (hit.transform.name == "BCapPant")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                        BUnderWear.SetActive(true);
+                        clothSelected = hit.transform.gameObject;
+                        BCapPant.SetActive(false);
+                        clothSelected = Instantiate(CapPant, hit.transform.position, hit.transform.rotation);
+                    }
+                    
+                    if (hit.transform.name == "MSkirt")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                        MSkirt.SetActive(false);
+                        MCoat.GetComponent<BoxCollider>().enabled = true;
+                        clothSelected = Instantiate(Skirt, hit.transform.position, hit.transform.rotation);
                     }
 
                     if (hit.transform.name == "MGirlShoe")
                     {
-
                         done = true;
                         cloth = hit.transform.name;
-                        clothSelected = hit.transform.gameObject;
                         MGirlShoe.SetActive(false);
                         clothSelected = Instantiate(GirlShoe, hit.transform.position, hit.transform.rotation);
                     }
 
-                  
+                    if (hit.transform.name == "BGirlSuit")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                        BGirlSuit.SetActive(false);
+                        clothSelected = Instantiate(GirlSuit, hit.transform.position, hit.transform.rotation);
+                    }
+
+
+
+                    if (hit.transform.name == "WHarryPant")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                        WHarryPant.SetActive(false);
+                        clothSelected = Instantiate(HarryPant, hit.transform.position, hit.transform.rotation);
+                    }
+
+                    if (hit.transform.name == "WSweater")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                        WSweater.SetActive(false);
+                        clothSelected = Instantiate(Sweater, hit.transform.position, hit.transform.rotation);
+                    }
+
+
+                    if (hit.transform.name == "WCapPant")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                        WHarryPant.SetActive(true);
+                        WUnderWear.SetActive(true);
+                        WCapPant.SetActive(false);
+                        clothSelected = Instantiate(CapPant, hit.transform.position, hit.transform.rotation);
+                    }
+
+                    if (hit.transform.name == "BSkirt")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                        BUnderWear.SetActive(true);
+                        BSkirt.SetActive(false);
+                        clothSelected = Instantiate(Skirt, hit.transform.position, hit.transform.rotation);
+                    }
+
+                    if (hit.transform.name == "MCoat")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                       
+                        MCoat.SetActive(false);
+                        clothSelected = Instantiate(Coat, hit.transform.position, hit.transform.rotation);
+                    }
+
+                    if (hit.transform.name == "MHarryPant")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+
+                        MHarryPant.SetActive(false);
+                        clothSelected = Instantiate(HarryPant, hit.transform.position, hit.transform.rotation);
+                    }
+
+                    if (hit.transform.name == "WCapSuit")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                       
+                        Bra.SetActive(true);
+                        WCapSuit.SetActive(false);
+                        clothSelected = Instantiate(CapSuit, hit.transform.position, hit.transform.rotation);
+                    }
+
+
+                    if (hit.transform.name == "BCapSuit")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+
+                        BCapSuit.SetActive(false);
+                        BSweater.SetActive(true);
+                        clothSelected = Instantiate(CapSuit, hit.transform.position, hit.transform.rotation);
+                    }
+
+                    if (hit.transform.name == "MGirlSuit")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+                       
+                        MGirlSuit.SetActive(false);
+                        clothSelected = Instantiate(GirlSuit, hit.transform.position, hit.transform.rotation);
+                    }
+
+                    if (hit.transform.name == "WGlass")
+                    {
+                        done = true;
+                        cloth = hit.transform.name;
+
+                        WGlass.SetActive(false);
+                        clothSelected = Instantiate(Glass, hit.transform.position, hit.transform.rotation);
+                    }
+
                 }
                 clothSelected.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(3f, 3f, 3f));
             }
@@ -99,7 +232,7 @@ public class ThreePerson : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            print(count);
+            print(cloth);
             done = false;
             clothSelected.gameObject.SetActive(false);
 
@@ -107,7 +240,105 @@ public class ThreePerson : MonoBehaviour
             {
                 WSweater.SetActive(true);
             }
-         
+
+
+            if (cloth == "BCapPant")
+            {
+                WCapPant.SetActive(true);
+                WHarryPant.SetActive(false);
+            }
+
+            if (cloth == "WHarryShoes")
+            {
+                BHarryShoes.SetActive(true);
+            }
+
+            if (cloth == "MSkirt")
+            {
+                BUnderWear.SetActive(false);
+                BSkirt.SetActive(true);
+            }
+
+            if (cloth == "MGirlShoe")
+            {
+                WGirlShoe.SetActive(true);
+            }
+
+            if (cloth == "WHarryPant")
+            {
+                MHarryPant.SetActive(true);
+            }
+             
+            if (cloth == "WCapPant")
+            {
+                MCapPant.SetActive(true);
+                MHarryPant.SetActive(false);
+                WHarryPant.SetActive(true);
+            }
+
+            if (cloth == "BGirlSuit")
+            {
+                MGirlSuit.SetActive(true);
+            }
+
+            if (cloth == "WSweater")
+            {
+                BSweater.SetActive(true);
+            }
+
+            if (cloth == "BSkirt")
+            {
+                WSkirt.SetActive(true);
+            }
+
+            if (cloth == "MCoat")
+            {
+                BCoat.SetActive(true);
+            }
+
+            if (cloth == "MHarryPant")
+            {
+                BHarryPant.SetActive(true);
+                BUnderWear.SetActive(false);
+            }
+
+            if (cloth == "WCapSuit")
+            {
+                BCapSuit.SetActive(true);
+                BSweater.SetActive(false);
+            }
+
+            if (cloth == "MGirlSuit")
+            {
+                WGirlSuit.SetActive(true);
+                Bra.SetActive(false);
+            }
+
+            if (cloth == "WGlass")
+            {
+                BGlass.SetActive(true);
+                StartCoroutine(dance());
+            }
+
+            if (cloth == "BCapSuit")
+            {
+                MCapSuit.SetActive(true);
+            }
+
+        }
+    }
+
+    IEnumerator dance()
+    {
+        yield return new WaitForSeconds(1f);
+        foreach(ParticleSystem con in confetti)
+        {
+            con.Play();
+        }
+       
+        foreach(Animator anim in AnimatorArray)
+        {
+            anim.SetTrigger("dance");
         }
     }
 }
