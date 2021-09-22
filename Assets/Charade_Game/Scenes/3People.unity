@@ -1097,6 +1097,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BGlass
       objectReference: {fileID: 0}
+    - target: {fileID: 5233112405309087440, guid: be76bf51b28d1ee4c90ada81d2ad9b4e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: be76bf51b28d1ee4c90ada81d2ad9b4e,
         type: 3}
       propertyPath: m_Controller
@@ -1122,6 +1127,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7926839288223873370, guid: be76bf51b28d1ee4c90ada81d2ad9b4e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd265f10eccefde44b0240742ff682ff, type: 2}
     - target: {fileID: 8202283048897485285, guid: be76bf51b28d1ee4c90ada81d2ad9b4e,
         type: 3}
       propertyPath: m_Name
@@ -1659,6 +1669,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7621856740419483663, guid: e1f12f7ce717f304590d1f8f03356b3a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd265f10eccefde44b0240742ff682ff, type: 2}
     - target: {fileID: -6177225269207502672, guid: e1f12f7ce717f304590d1f8f03356b3a,
         type: 3}
       propertyPath: m_IsActive
