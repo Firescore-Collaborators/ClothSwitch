@@ -57,8 +57,14 @@ public class ThreePerson : MonoBehaviour
     public GameObject GirlSuit;
 
 
-    public ParticleSystem[] confetti;
-    public Animator[] AnimatorArray;
+    public ParticleSystem Maleconfetti;
+    public ParticleSystem Femaleconfetti;
+    public ParticleSystem Boyconfetti;
+    
+    public Animator MaleAnimator;
+    public Animator FeMaleAnimator;
+    public Animator BoyAnimator;
+
 
     GameObject clothSelected;
     bool done = false;
@@ -312,33 +318,26 @@ public class ThreePerson : MonoBehaviour
             {
                 WGirlSuit.SetActive(true);
                 Bra.SetActive(false);
+                FeMaleAnimator.SetTrigger("dance");
+                Femaleconfetti.Play();
             }
 
             if (cloth == "WGlass")
             {
                 BGlass.SetActive(true);
-                StartCoroutine(dance());
+                BoyAnimator.SetTrigger("dance");
+                Boyconfetti.Play();
             }
 
             if (cloth == "BCapSuit")
             {
                 MCapSuit.SetActive(true);
+
+                MaleAnimator.SetTrigger("dance");
+                Maleconfetti.Play();
             }
 
         }
     }
 
-    IEnumerator dance()
-    {
-        yield return new WaitForSeconds(1f);
-        foreach(ParticleSystem con in confetti)
-        {
-            con.Play();
-        }
-       
-        foreach(Animator anim in AnimatorArray)
-        {
-            anim.SetTrigger("dance");
-        }
-    }
 }
